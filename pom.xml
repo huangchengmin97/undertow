@@ -123,6 +123,30 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
             </plugin>
+          
+           	<plugin>
+                <groupId>edu.illinois.cs</groupId>
+                <artifactId>testrunner-maven-plugin</artifactId>
+                <version>1.2</version>
+                <dependencies>
+                   <dependency>
+                      <groupId>edu.illinois.cs</groupId>
+                      <artifactId>idflakies</artifactId>
+                      <!-- Use iDFlakies from Maven Central -->
+                      <version>1.1.0</version>
+                      <!-- Use the following version instead if you build iDFlakies locally and want to use the locally built version. -->
+                      <!-- <version>1.2.0-SNAPSHOT</version> -->
+                   </dependency>
+                </dependencies>
+                <configuration>
+                   <className>edu.illinois.cs.dt.tools.detection.DetectorPlugin</className>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>edu.illinois</groupId>
+                <artifactId>nondex-maven-plugin</artifactId>
+    	          <version>1.1.2</version>
+      	    </plugin>
 
             <!-- Javadoc -->
             <plugin>
